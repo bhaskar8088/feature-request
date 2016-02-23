@@ -25,4 +25,4 @@ Installation:
 
 5. Run the server and access website at http://localhost:8000
 
-        python manage.py runserv
+        python manage.py runserver
