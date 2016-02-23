@@ -5,7 +5,7 @@ Installation:
 -------------
 1. Clone the repo
 
-    git clone git@github.com:bhaskar8088/feature-request.git
+        git clone git@github.com:bhaskar8088/feature-request.git
 
 2. Create a virtual environment
 
