@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block meta_title %}{% endblock %} | Site Title </title>
+
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/application.css">
+
+  {% block extra_styles %}{% endblock %}
+</head>
+<body>
+
+<div class='container'>
+  {% block content %}{% endblock %}
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+{% block extra_js %}{% endblock %}
+
+</body>
+</html>

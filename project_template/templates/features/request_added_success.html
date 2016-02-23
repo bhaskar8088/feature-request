@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block meta_title %}Feature Request added successfully{% endblock %}
+
+{% block content %}
+<div class="big-msg">
+  You have successfully added the feature request.
+  <div class="tac">
+  <a href="{% url 'feature-request' pk slug %}" class="btn btn-primary btn-lg mtxl">View</a>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block meta_title %}Feature Request Details{% endblock %}
+
+{% block content %}
+<h1>Feature Request Details</h1>
+<dl class="dl-horizontal">
+  <dt>Title</dt>
+  <dd>{{ feature_request.title }}</dd>
+
+  <dt>Description</dt>
+  <dd>{{ feature_request.description }}</dd>
+
+  <dt>Client</dt>
+  <dd>{{ feature_request.client.name }}</dd>
+
+  <dt>Target date</dt>
+  <dd>{{ feature_request.target_date }}</dd>
+
+  <dt>Ticket Url</dt>
+  <dd><a href="{{ feature_request.ticket_url }}" target="_blank">{{ feature_request.ticket_url }}</a></dd>
+
+  <dt>Product area</dt>
+  <dd>{{ feature_request.get_product_area_display }}</dd>
+
+  <dt>Created By</dt>
+  <dd>{{ feature_request.created_by }}</dd>
+
+</dl>
+{% endblock %}
