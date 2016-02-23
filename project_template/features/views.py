@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import FormView, TemplateView
 from django.core.urlresolvers import reverse
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 
 from .models import *
 from .forms import *
@@ -37,3 +37,6 @@ class NewFeatureRequestSuccessView(TemplateView):
         context['slug'] = kwargs['slug']
         return context
 
+
+def home_view(request):
+    return redirect(reverse("new-feature-request"))

@@ -15,6 +15,29 @@ class Client(DateTimeBase):
     def __unicode__(self):
         return u"%s" % self.name
 
+    def priority_data(self):
+        obj = None
+        try:
+            obj = ClientPriority.objects.get(client=self)
+        except ClientPriority.DoesNotExist:
+            pass
+
+        res = {}
+        if not obj:
+            return {}
+
+        data = obj.data_dict
+        for k, v in data.items():
+            feature_request_obj = FeatureRequest.objects.get(id=v)
+            res[k] = {
+                "title": feature_request_obj.title,
+                "slug": feature_request_obj.slug,
+                "id": v
+            }
+
+        return res
+
+
 
 class ClientPriority(DateTimeBase):
     client = models.OneToOneField(Client)

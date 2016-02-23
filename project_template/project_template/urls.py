@@ -16,8 +16,11 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+from features.views import home_view
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^features/', include('features.urls')),
     url(r'^accounts/', include('allauth.urls')),
+    url(r'^$', home_view, name="home"),
 ]

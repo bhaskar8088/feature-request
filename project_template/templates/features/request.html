@@ -29,6 +29,13 @@
   <dt>Created By</dt>
   <dd>{{ feature_request.created_by }}</dd>
 
+</dl>
 
+<h2>Other Feature requests for the client {{ feature_request.client.name }} who is linked to this feature request.</h2>
+<dl class="dl-horizontal">
+{% for k, v in feature_request.client.priority_data.items %}
+  <dt>{{ k }}</dt>
+  <dd><a href="{% url 'feature-request' v.id v.slug %}">{{ v.title }}</a></dd>
+{% endfor %}
 </dl>
 {% endblock %}
